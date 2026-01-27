@@ -1,9 +1,8 @@
-# MOSuite-create CodeOcean Capsule
-
-## Version 2.0
-
-This release is identical to v1.0, except it is a Standard app rather than a No-Code app.
+# MOSuite-clean CodeOcean Capsule
 
 ## Version 1.0
 
-First release of MOSuite-create as a No-Code app
+First release of MOSuite-clean on Code Ocean with minimal parameters as a proof-of-concept:
+- input multiOmicDataSet
+- clean up column names
+- count type
