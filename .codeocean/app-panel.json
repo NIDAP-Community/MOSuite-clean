@@ -2,8 +2,8 @@
 	"version": 1,
 	"named_parameters": true,
 	"general": {
-		"title": "MOSuite-create",
-		"instructions": "create multiOmicsDataSet from files"
+		"title": "MOSuite-clean",
+		"instructions": "clean raw counts in a multiOmicsDataSet"
 	},
 	"datasets": [
 		{
@@ -17,41 +17,56 @@
 			"name": "Input Data Parameters",
 			"description": "Options for defining input data",
 			"icon": "📁"
+		},
+		{
+			"id": "gn9FXwemlVazWQIo",
+			"name": "Basic",
+			"icon": "📂"
+		},
+		{
+			"id": "XqgPq28Eo5VCFSZu",
+			"name": "Advanced",
+			"description": "Advanced parameters",
+			"icon": "📂"
 		}
 	],
 	"parameters": [
 		{
 			"id": "vErI4n2A3SVqtFPz",
 			"category": "gDLmTU36PrmD13RK",
-			"name": "sample metadata filename",
-			"param_name": "sample_metadata_filename",
-			"description": "Sample metadata filename as csv or tsv (gzip is supported)",
+			"name": "multiOmicDataSet",
+			"param_name": "moo",
+			"description": "path to a multiOmicDataset as an RDS file",
 			"type": "file",
 			"required": true
 		},
 		{
-			"id": "PWHob7bTHaUsDk0O",
-			"category": "gDLmTU36PrmD13RK",
-			"name": "Raw counts filename",
-			"param_name": "raw_counts_filename",
-			"description": "Raw counts file as csv or tsv (gzip is supported)",
-			"type": "file",
-			"required": true
-		},
-		{
-			"id": "SmNCcfekx5eky9X4",
-			"category": "gDLmTU36PrmD13RK",
-			"name": "Delimiter",
-			"param_name": "delim",
-			"description": "Delimiter for input files (e.g. use \",\" for csv or \"\\t\" for tsv)",
+			"id": "vJvArGM6rjelGp9u",
+			"category": "gn9FXwemlVazWQIo",
+			"name": "Clean up column names",
+			"param_name": "cleanup_column_names",
 			"type": "text",
 			"value_type": "string",
-			"default_value": ","
+			"default_value": "TRUE",
+			"pattern": "TRUE|FALSE|T|F"
+		},
+		{
+			"id": "UA4GuIpVAxdcmHAG",
+			"category": "XqgPq28Eo5VCFSZu",
+			"name": "count type",
+			"param_name": "count_type",
+			"description": "which counts to clean. Must be a count type in names(moo@counts)",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "raw"
 		}
 	],
 	"results": [
 		{
 			"file_name": "moo.rds"
+		},
+		{
+			"file_name": "figures/clean/read_depth.png"
 		}
 	]
 }
