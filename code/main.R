@@ -18,19 +18,22 @@ write_csv(pkg_versions, file.path(results_dir, 'r-packages.csv'))
 # parse CLI arguments
 parser <- ArgumentParser()
 
-parser$add_argument("--moo", type="character", required=TRUE)
+parser$add_argument("--regex_moo", type="character", default=".*\\.rds$")
 parser$add_argument("--cleanup_column_names", type="logical", default=TRUE)
 parser$add_argument("--count_type", type="character", default="raw")
 
 args <- parser$parse_args()
 
 # validate inputs
-for (f in c(args$moo)) {
-    if (!file.exists(f)) {
-        stop(glue("File not found: {f}"))
-    }
+data_files <- list.files(file.path('../data'), recursive = TRUE, full.names = TRUE)
+moo_files <- Filter(\(x) str_detect(x, regex(args$regex_moo, ignore_case = TRUE)), data_files)
+
+if (length(moo_files) == 0) {
+    stop(glue("No files matching regex: {args$regex_moo}"))
 }
-moo <- read_rds(args$moo)
+moo_filename <- moo_files[1]
+moo <- read_rds(moo_filename)
+message(glue('Reading multiOmicDataSet from {moo_filename}'))
 if (!inherits(moo, 'MOSuite::multiOmicDataSet')) {
     stop(glue('The input is not a multiOmicDataSet. class: {class(moo)}'))
 }
