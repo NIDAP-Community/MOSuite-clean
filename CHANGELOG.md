@@ -1,4 +1,4 @@
-# MOSuite-clean CodeOcean Capsule
+# Code Ocean capsule - MOSuite - clean raw counts
 
 ## v2.0
 
