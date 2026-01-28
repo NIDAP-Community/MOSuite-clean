@@ -45,4 +45,4 @@ moo |>
         count_type = args$count_type,
         cleanup_column_names = args$cleanup_column_names
         ) |> 
-    write_rds(file.path(results_dir, 'moo.rds'))
+    write_rds(file.path(results_dir, 'moo', 'moo.rds'))
