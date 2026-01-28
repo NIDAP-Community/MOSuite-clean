@@ -4,6 +4,7 @@ library(argparse)
 library(glue)
 library(MOSuite)
 library(readr)
+library(stringr)
 library(dplyr)
 
 # set up results directory
