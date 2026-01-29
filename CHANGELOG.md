@@ -1,5 +1,9 @@
 # Code Ocean capsule - MOSuite - clean raw counts
 
+## v3.0
+
+Add parameters and improve descriptions.
+
 ## v2.0
 
 Use a regular expression to find the multiOmicDataSet RDS file in the data/ directory.
