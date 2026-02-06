@@ -1,8 +1,8 @@
 # Code Ocean capsule - MOSuite - clean raw counts
 
-## development version
+## v4.0
 
-- Use the MOSuite v0.2.1-dev2 docker container.
+- Use the MOSuite v0.3.0 docker image.
 - Fix: remove `regex_moo` parameter from configuration. multiOmicDataSet input files are now required to follow the standardized naming pattern (`.*\.rds$`).
 
 ## v3.0
