@@ -2,7 +2,7 @@
 
 ## development version
 
-- Use the MOSuite v0.2.1-dev docker container.
+- Use the MOSuite v0.2.1-dev2 docker container.
 
 ## v3.0
 
