@@ -3,6 +3,7 @@
 ## development version
 
 - Use the MOSuite v0.2.1-dev2 docker container.
+- Fix: remove `regex_moo` parameter from configuration. multiOmicDataSet input files are now required to follow the standardized naming pattern (`.*\.rds$`).
 
 ## v3.0
 
