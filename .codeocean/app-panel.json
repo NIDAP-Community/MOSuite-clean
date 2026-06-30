@@ -57,15 +57,6 @@
 			]
 		},
 		{
-			"id": "vJvArGM6rjelGp9a",
-			"category": "gn9FXwemlVazWQIo",
-			"name": "Column for collapsing duplicates",
-			"description": "Column with Feature IDs to use as grouping elements to collapse the counts matrix",
-			"help_text": "Leave blank to use the Feature ID column by default. If the Feature ID column can be split, the non-Ensembl ID name will be used. If no Ensembl IDs are detected, split IDs will be named Feature_id_1 and Feature_id_2.",
-			"type": "text",
-			"value_type": "string"
-		},
-		{
 			"id": "vJvArGM6rjelGp9z",
 			"category": "gn9FXwemlVazWQIo",
 			"name": "Aggregate duplicate gene names",
@@ -78,6 +69,15 @@
 				"TRUE",
 				"FALSE"
 			]
+		},
+		{
+			"id": "vJvArGM6rjelGp9a",
+			"category": "gn9FXwemlVazWQIo",
+			"name": "Column for collapsing duplicates",
+			"description": "Column with Feature IDs to use as grouping elements to collapse the counts matrix",
+			"help_text": "Leave blank to use the Feature ID column by default. If the Feature ID column can be split, the non-Ensembl ID name will be used. If no Ensembl IDs are detected, split IDs will be named Feature_id_1 and Feature_id_2.",
+			"type": "text",
+			"value_type": "string"
 		},
 		{
 			"id": "UA4GuIpVAxdcmHAG",
