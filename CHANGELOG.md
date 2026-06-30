@@ -1,5 +1,9 @@
 # Code Ocean capsule - MOSuite - clean raw counts
 
+## Development version
+
+- Improved the Code Ocean parameter UI for the clean capsule (#2).
+
 ## v4.0
 
 - Use the MOSuite v0.3.0 docker image.
