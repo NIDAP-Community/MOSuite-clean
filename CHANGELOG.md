@@ -2,6 +2,7 @@
 
 ## Development version
 
+- Fixed the Code Ocean panel so parameters are passed to `main.R` by name instead of as positional values (#2).
 - Improved the Code Ocean parameter UI for the clean capsule (#2).
 
 ## v4.0
