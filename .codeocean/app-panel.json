@@ -37,10 +37,13 @@
 			"name": "Clean up column names",
 			"param_name": "cleanup_column_names",
 			"description": "Automatically alter invalid column names by adding X prefix to names starting with numerals and replacing special characters (-,:. ) with underscores",
-			"type": "text",
+			"type": "list",
 			"value_type": "string",
 			"default_value": "TRUE",
-			"pattern": "TRUE|FALSE|T|F"
+			"extra_data": [
+				"TRUE",
+				"FALSE"
+			]
 		},
 		{
 			"id": "vJvArGM6rjelGp9x",
@@ -48,10 +51,28 @@
 			"name": "Split gene names",
 			"param_name": "split_gene_name",
 			"description": "Split the gene name column by special characters: ,|_-:",
-			"type": "text",
+			"type": "list",
 			"value_type": "string",
 			"default_value": "TRUE",
-			"pattern": "TRUE|FALSE|T|F"
+			"extra_data": [
+				"TRUE",
+				"FALSE"
+			]
+		},
+		{
+			"id": "vJvArGM6rjelGp9z",
+			"category": "gn9FXwemlVazWQIo",
+			"name": "Aggregate duplicate gene names",
+			"param_name": "aggregate_rows_with_duplicate_gene_names",
+			"description": "Sum counts across duplicate Feature ID rows into a single row within each sample",
+			"help_text": "When TRUE, additional identifier columns (e.g. Ensembl IDs) are preserved and multiple matching identifiers appear as comma-separated values.",
+			"type": "list",
+			"value_type": "string",
+			"default_value": "TRUE",
+			"extra_data": [
+				"TRUE",
+				"FALSE"
+			]
 		},
 		{
 			"id": "vJvArGM6rjelGp9a",
@@ -62,18 +83,6 @@
 			"help_text": "Leave blank to use the Feature ID column by default. If the Feature ID column can be split, the non-Ensembl ID name will be used. If no Ensembl IDs are detected, split IDs will be named Feature_id_1 and Feature_id_2.",
 			"type": "text",
 			"value_type": "string"
-		},
-		{
-			"id": "vJvArGM6rjelGp9z",
-			"category": "gn9FXwemlVazWQIo",
-			"name": "Aggregate duplicate gene names",
-			"param_name": "aggregate_rows_with_duplicate_gene_names",
-			"description": "Sum counts across duplicate Feature ID rows into a single row within each sample",
-			"help_text": "When TRUE, additional identifier columns (e.g. Ensembl IDs) are preserved and multiple matching identifiers appear as comma-separated values.",
-			"type": "text",
-			"value_type": "string",
-			"default_value": "TRUE",
-			"pattern": "TRUE|FALSE|T|F"
 		},
 		{
 			"id": "UA4GuIpVAxdcmHAG",
