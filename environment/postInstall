@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
 set -e
+
+Rscript -e "remotes::install_github('CCBR/MOSuite', ref = 'FigOutSync', upgrade = 'never')"

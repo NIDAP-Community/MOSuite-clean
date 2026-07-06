@@ -107,7 +107,9 @@ test_that("code/run executes with custom CLI arguments", {
       "--count_type=raw",
       "--cleanup_column_names=FALSE",
       "--split_gene_name=FALSE",
-      "--aggregate_rows_with_duplicate_gene_names=FALSE"
+      "--aggregate_rows_with_duplicate_gene_names=FALSE",
+      "--group_colname=Group",
+      "--colors_for_plots=blue,green,orange"
     )
   )
 
@@ -128,4 +130,28 @@ test_that("code/run executes with custom CLI arguments", {
     S7::S7_inherits(moo, MOSuite::multiOmicDataSet),
     info = "Output should be an S7 multiOmicDataSet object"
   )
+})
+
+test_that("app panel exposes read-depth group color parameters", {
+  repo_root <- normalizePath(file.path(dirname(getwd()), ".."))
+  panel <- jsonlite::read_json(
+    file.path(repo_root, ".codeocean", "app-panel.json"),
+    simplifyVector = TRUE
+  )
+  param_names <- panel$parameters$param_name
+  param_categories <- stats::setNames(panel$parameters$category, param_names)
+  category_names <- stats::setNames(panel$categories$name, panel$categories$id)
+
+  expect_true("group_colname" %in% param_names)
+  expect_true("colors_for_plots" %in% param_names)
+  expect_equal(category_names[[param_categories[["group_colname"]]]], "Visualization")
+  expect_equal(category_names[[param_categories[["colors_for_plots"]]]], "Visualization")
+})
+
+test_that("postInstall installs MOSuite FigOutSync branch", {
+  repo_root <- normalizePath(file.path(dirname(getwd()), ".."))
+  post_install <- readLines(file.path(repo_root, "environment", "postInstall"))
+
+  expect_true(any(grepl("CCBR/MOSuite", post_install, fixed = TRUE)))
+  expect_true(any(grepl("FigOutSync", post_install, fixed = TRUE)))
 })
