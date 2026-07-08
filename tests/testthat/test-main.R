@@ -144,8 +144,14 @@ test_that("app panel exposes read-depth group color parameters", {
 
   expect_true("group_colname" %in% param_names)
   expect_true("colors_for_plots" %in% param_names)
-  expect_equal(category_names[[param_categories[["group_colname"]]]], "Visualization")
-  expect_equal(category_names[[param_categories[["colors_for_plots"]]]], "Visualization")
+  expect_equal(
+    category_names[[param_categories[["group_colname"]]]],
+    "Visualization"
+  )
+  expect_equal(
+    category_names[[param_categories[["colors_for_plots"]]]],
+    "Visualization"
+  )
 })
 
 test_that("postInstall installs MOSuite FigOutSync branch", {
