@@ -4,6 +4,7 @@
 
 - Fixed the Code Ocean panel so parameters are passed to `main.R` by name instead of as positional values (#2, @phoman14).
 - Improved the Code Ocean parameter UI for the clean capsule (#2, @phoman14).
+- Added read-depth plot group color controls to the Visualization panel (#2, @phoman14).
 
 ## v4.0
 

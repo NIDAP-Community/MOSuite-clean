@@ -30,6 +30,18 @@ parser$add_argument(
   default = "",
   help = "Sample names to rename"
 )
+parser$add_argument(
+  "--group_colname",
+  type = "character",
+  default = "",
+  help = "Column name for coloring the read-depth plot. Leave blank to use one color."
+)
+parser$add_argument(
+  "--colors_for_plots",
+  type = "character",
+  default = "#5954d6,#e1562c,#b80058,#00c6f8,#d163e6,#00a76c,#ff9287,#008cf9,#006e00,#796880,#FFA500,#878500",
+  help = "Comma-separated colors for the read-depth plot. Defaults to the MOSuite palette. Extra group colors are generated when needed."
+)
 parser$add_argument("--cleanup_column_names", type = "logical", default = TRUE)
 parser$add_argument("--count_type", type = "character", default = "raw")
 parser$add_argument(
@@ -63,6 +75,8 @@ moo |>
     sample_id_colname = args$sample_id_colname,
     feature_id_colname = args$feature_id_colname,
     samples_to_rename = parse_samples_to_rename(args$samples_to_rename),
+    group_colname = args$group_colname,
+    colors_for_plots = parse_optional_vector(args$colors_for_plots),
     cleanup_column_names = args$cleanup_column_names,
     split_gene_name = args$split_gene_name,
     aggregate_rows_with_duplicate_gene_names = args$aggregate_rows_with_duplicate_gene_names,
