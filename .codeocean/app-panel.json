@@ -24,6 +24,12 @@
 			"icon": "📂"
 		},
 		{
+			"id": "Visualization",
+			"name": "Visualization",
+			"description": "Visualization and plotting options",
+			"icon": "📊"
+		},
+		{
 			"id": "XqgPq28Eo5VCFSZu",
 			"name": "Advanced",
 			"description": "Advanced parameters",
@@ -37,10 +43,13 @@
 			"name": "Clean up column names",
 			"param_name": "cleanup_column_names",
 			"description": "Automatically alter invalid column names by adding X prefix to names starting with numerals and replacing special characters (-,:. ) with underscores",
-			"type": "text",
+			"type": "list",
 			"value_type": "string",
 			"default_value": "TRUE",
-			"pattern": "TRUE|FALSE|T|F"
+			"extra_data": [
+				"TRUE",
+				"FALSE"
+			]
 		},
 		{
 			"id": "vJvArGM6rjelGp9x",
@@ -48,10 +57,28 @@
 			"name": "Split gene names",
 			"param_name": "split_gene_name",
 			"description": "Split the gene name column by special characters: ,|_-:",
-			"type": "text",
+			"type": "list",
 			"value_type": "string",
 			"default_value": "TRUE",
-			"pattern": "TRUE|FALSE|T|F"
+			"extra_data": [
+				"TRUE",
+				"FALSE"
+			]
+		},
+		{
+			"id": "vJvArGM6rjelGp9z",
+			"category": "gn9FXwemlVazWQIo",
+			"name": "Aggregate duplicate gene names",
+			"param_name": "aggregate_rows_with_duplicate_gene_names",
+			"description": "Sum counts across duplicate Feature ID rows into a single row within each sample",
+			"help_text": "When TRUE, additional identifier columns (e.g. Ensembl IDs) are preserved and multiple matching identifiers appear as comma-separated values.",
+			"type": "list",
+			"value_type": "string",
+			"default_value": "TRUE",
+			"extra_data": [
+				"TRUE",
+				"FALSE"
+			]
 		},
 		{
 			"id": "vJvArGM6rjelGp9a",
@@ -64,16 +91,24 @@
 			"value_type": "string"
 		},
 		{
-			"id": "vJvArGM6rjelGp9z",
-			"category": "gn9FXwemlVazWQIo",
-			"name": "Aggregate duplicate gene names",
-			"param_name": "aggregate_rows_with_duplicate_gene_names",
-			"description": "Sum counts across duplicate Feature ID rows into a single row within each sample",
-			"help_text": "When TRUE, additional identifier columns (e.g. Ensembl IDs) are preserved and multiple matching identifiers appear as comma-separated values.",
+			"id": "cleanReadDepthGroup",
+			"category": "Visualization",
+			"name": "Group column name",
+			"param_name": "group_colname",
+			"description": "Column from sample metadata used to color the read-depth plot",
+			"help_text": "Leave blank to use one color for all samples.",
 			"type": "text",
-			"value_type": "string",
-			"default_value": "TRUE",
-			"pattern": "TRUE|FALSE|T|F"
+			"value_type": "string"
+		},
+		{
+			"id": "cleanReadDepthColors",
+			"category": "Visualization",
+			"name": "Colors for read-depth plot",
+			"param_name": "colors_for_plots",
+			"description": "Comma-separated list of colors for read-depth groups",
+			"help_text": "Use color names or hex codes. Leave blank to use defaults.",
+			"type": "text",
+			"value_type": "string"
 		},
 		{
 			"id": "UA4GuIpVAxdcmHAG",
