@@ -98,7 +98,8 @@
 			"description": "Column from sample metadata used to color the read-depth plot",
 			"help_text": "Leave blank to use one color for all samples.",
 			"type": "text",
-			"value_type": "string"
+			"value_type": "string",
+			"default_value": "Group"
 		},
 		{
 			"id": "cleanReadDepthColors",
@@ -108,7 +109,8 @@
 			"description": "Comma-separated list of colors for read-depth groups",
 			"help_text": "Use color names or hex codes. Leave blank to use defaults.",
 			"type": "text",
-			"value_type": "string"
+			"value_type": "string",
+			"default_value": "#5954d6,#e1562c,#b80058,#00c6f8,#d163e6,#00a76c,#ff9287,#008cf9,#006e00,#796880,#FFA500,#878500"
 		},
 		{
 			"id": "UA4GuIpVAxdcmHAG",
