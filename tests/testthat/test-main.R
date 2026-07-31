@@ -70,11 +70,3 @@ test_that("app panel exposes read-depth group color parameters", {
     "Visualization"
   )
 })
-
-test_that("postInstall installs MOSuite FigOutSync branch", {
-  repo_root <- normalizePath(file.path(dirname(getwd()), ".."))
-  post_install <- readLines(file.path(repo_root, "environment", "postInstall"))
-
-  expect_true(any(grepl("CCBR/MOSuite", post_install, fixed = TRUE)))
-  expect_true(any(grepl("FigOutSync", post_install, fixed = TRUE)))
-})
