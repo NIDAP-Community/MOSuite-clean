@@ -2,6 +2,10 @@
 
 ## Development version
 
+- Use MOSuite v0.5.0. (#11, @kelly-sovacool)
+
+## v5.0
+
 - Sync Code Ocean app panel parameter descriptions with MOSuite package documentation for MOSuite v0.4.1 (#8, @phoman14).
 - Fixed the Code Ocean panel so parameters are passed to `main.R` by name instead of as positional values (#2, @phoman14).
 - Improved the Code Ocean parameter UI for the clean capsule (#2, @phoman14).
