@@ -1,6 +1,8 @@
 # Code Ocean capsule - MOSuite - clean raw counts
 
-## Development version
+## development version
+
+## v6.0
 
 - Use MOSuite v0.5.0. (#11, @kelly-sovacool)
 
